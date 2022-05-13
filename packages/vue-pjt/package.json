@@ -1,0 +1,7 @@
+{
+  "name": "vue-pjt",
+  "packageManager": "yarn@3.2.0",
+  "dependencies": {
+    "vue": "^3.2.33"
+  }
+}

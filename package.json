@@ -1,0 +1,15 @@
+{
+  "name": "monorepo-tutorial",
+  "packageManager": "yarn@3.2.0",
+  "scripts": {
+    "webpack-pjt": "yarn workspace webpack-pjt dev"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/**"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
