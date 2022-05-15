@@ -31,6 +31,12 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@common/core@workspace:*, @common/core@workspace:packages/common-core":
+  version: 0.0.0-use.local
+  resolution: "@common/core@workspace:packages/common-core"
+  languageName: unknown
+  linkType: soft
+
 "@discoveryjs/json-ext@npm:^0.5.0":
   version: 0.5.7
   resolution: "@discoveryjs/json-ext@npm:0.5.7"
@@ -3863,6 +3869,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "webpack-pjt@workspace:packages/webpack-pjt"
   dependencies:
+    "@common/core": "workspace:*"
     html-webpack-plugin: ^5.5.0
     webpack: ^5.72.1
     webpack-cli: ^4.9.2

@@ -55,3 +55,31 @@ yarn workspace wepback-pjt dev
 ```
 
 위와 같은 명령을 루트의 `package.json`의 `scripts`에 등록하여 사용할 수도 있다.
+
+### 패키지 사용하기
+
+`packages/`에 있는 패키지들끼리 서로 공유하여 사용할 수 있다.
+`pacakges/common-core`라는 폴더를 만든 후에 `yarn init -y`를 실행한다.
+`package.json`을 아래와 같이 수정한다.
+
+```json
+{
+  "name": "@common/core",
+  "version": "0.1.0",
+  "packageManager": "yarn@3.2.0",
+  "main": "src/index.js"
+}
+```
+
+- 패키지 이름을 `@common/core`로 변경하였다. (다른 패키지에서 해당 이름으로 모듈을 불러올 수 있다.)
+- 해당 모듈을 사용할 때 최초 진입을 `src/index.js`로 설정하였다.
+
+이후에 해당 패키지를 사용하기 위해서는 `dependencies`에 다음과 같이 추가한다.
+
+```
+"dependencies": {
+    "@common/core": "workspace:*",
+  }
+```
+
+이후 `yarn install`을 통해 설치 후에 사용하도록 한다.

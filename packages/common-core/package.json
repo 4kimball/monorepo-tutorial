@@ -1,0 +1,6 @@
+{
+  "name": "@common/core",
+  "version": "0.1.0",
+  "packageManager": "yarn@3.2.0",
+  "main": "src/index.js"
+}

@@ -21,6 +21,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:."\
       },\
       {\
+        "name": "@common/core",\
+        "reference": "workspace:packages/common-core"\
+      },\
+      {\
         "name": "react-pjt",\
         "reference": "workspace:packages/react-pjt"\
       },\
@@ -36,6 +40,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
+      ["@common/core", ["workspace:packages/common-core"]],\
       ["monorepo-tutorial", ["workspace:."]],\
       ["react-pjt", ["workspace:packages/react-pjt"]],\
       ["vue-pjt", ["workspace:packages/vue-pjt"]],\
@@ -81,6 +86,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["to-fast-properties", "npm:2.0.0"]\
           ],\
           "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@common/core", [\
+        ["workspace:packages/common-core", {\
+          "packageLocation": "./packages/common-core/",\
+          "packageDependencies": [\
+            ["@common/core", "workspace:packages/common-core"]\
+          ],\
+          "linkType": "SOFT"\
         }]\
       ]],\
       ["@discoveryjs/json-ext", [\
@@ -4654,6 +4668,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./packages/webpack-pjt/",\
           "packageDependencies": [\
             ["webpack-pjt", "workspace:packages/webpack-pjt"],\
+            ["@common/core", "workspace:packages/common-core"],\
             ["html-webpack-plugin", "virtual:ed64bda5f8d2dce93fb65811de306860ca0c11574586ca5fdcc56153146d7523d318c47250f5948eeff6772cb0e65370a9ff29fd71c4774776d2d6c7d74933a8#npm:5.5.0"],\
             ["webpack", "virtual:ed64bda5f8d2dce93fb65811de306860ca0c11574586ca5fdcc56153146d7523d318c47250f5948eeff6772cb0e65370a9ff29fd71c4774776d2d6c7d74933a8#npm:5.72.1"],\
             ["webpack-cli", "virtual:ed64bda5f8d2dce93fb65811de306860ca0c11574586ca5fdcc56153146d7523d318c47250f5948eeff6772cb0e65370a9ff29fd71c4774776d2d6c7d74933a8#npm:4.9.2"],\
